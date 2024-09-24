@@ -1,4 +1,4 @@
-# Prueba técnica as research
+# Prueba técnica **as research**
 
 Elaborada por Sergio Orrego
 
@@ -18,16 +18,24 @@ El elemento con clase `slideshow-container` estaba renderizando todo el material
 
 Con los cambios realizados, los elementos con clase `image-item` presentan desde el comienzo un tamaño uniforme.
 
+## Prueba 4 (visualización de datos)
+
+En la página "Gráficos" (accesible mediante el footer) se encuentran dos gráficos propuestos para proyectar la información proveniente de uno de los endpoints.
+
 ## Prueba 5 (optimización de recursos computacionales)
 
-- Se agrega un favicon al aplicativo.
+- Se agrega un favicon a cada página del aplicativo.
 
 - El archivo .ttf con la tipografía Candara es recuperado de internet y ubicado en la raíz del proyecto.
 
 - Se crean archivos .css y .js para contener el código correspondiente y reducir la longitud del archivo .html.
+
+- Se cambia la posición del `catch` asociado al método `fetch` de la función `fetchAndDisplayImages` para capturar únicamente los errores asociados a consultas del endpoint. Además, se genera una promesa con estado rechazado en caso tal que el código de estado HTTP de la petición sea distinto a 200.
 
 - Si un registro contiene material fotográfico (atributo `fotos` o `Fotos`), se calcula el número de fotos dentro del atributo para que sea recorrido eficientemente por el bucle `for`.
 
 - Si un registro no contiene material fotográfico, no se inicializa el dinamismo en el elemento con clase `slideshow-container`.
 
 - El evento de Click asociado al elemento con clase `slideshow-container` no se visualiza correctamente debido a que cada elemento de imagen perteneciente al elemento con clase `mySlides`, tiene un evento de Click asociado que se ejecuta al mismo tiempo y abre el modal con la imagen en cuestión a tamaño completo. Se decide que el evento asociado al elemento con clase `slideshow-container` se ejecute con Click Derecho.
+
+- Formateo de código usando Prettier.

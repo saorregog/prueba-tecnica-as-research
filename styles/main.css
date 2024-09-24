@@ -203,3 +203,12 @@ body {
     margin-left: 8px; /* Espacio entre el icono y el texto */
   }
 }
+
+.titles {
+  margin-top: 60px;
+}
+
+.chart-2 {
+  width: 500px;
+  height: 500px;
+}

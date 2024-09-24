@@ -15,8 +15,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Function to fetch and display images from each source
   function fetchAndDisplayImages(url) {
     fetch(url)
-      .then((response) => response.json())
+      .then((response) => {
+        if (response.status !== 200) {
+          return Promise.reject(response.status);
+        }
+
+        return response.json();
+      })
+      .catch((error) => console.error("Error fetching data:", error))
       .then((data) => {
+        if (!data) return;
+
         data.data.forEach((item) => {
           const imageItem = document.createElement("div");
           imageItem.className = "image-item";
@@ -75,8 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         initializeSlideshows();
-      })
-      .catch((error) => console.error("Error fetching data:", error));
+      });
   }
 
   // Fetch images from all sources
