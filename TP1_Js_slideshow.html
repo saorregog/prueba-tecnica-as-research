@@ -265,9 +265,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     imageItem.className = 'image-item';
 
                     const info = `
-                        <p style="font-weight: bold; font-family: sans-serif; color: #FF7401; font-size: 18px;"><strong></strong> ${item.attributes?.createdAt}</p>
-                        <p style="font-weight: regular; font-family: sans-serif; font-size: 15px;"><strong>Latitud:</strong> ${item.attributes.Latitud}</p>
-                        <p style="font-weight: regular; font-family: sans-serif; font-size: 15px;"><strong>Longitud:</strong> ${item.attributes.Longitud}</p>
+                        <p style="font-weight: bold; font-family: sans-serif; color: #FF7401; font-size: 18px;"><strong></strong> ${item.attributes.createdAt}</p>
+                        <p style="font-weight: regular; font-family: sans-serif; font-size: 15px;"><strong>Latitud:</strong> ${item.attributes?.Latitud ?? "Sin información"}</p>
+                        <p style="font-weight: regular; font-family: sans-serif; font-size: 15px;"><strong>Longitud:</strong> ${item.attributes?.Longitud ?? "Sin información"}</p>
                     `;
 
                     const slideshowContainer = document.createElement('div');
